@@ -25,5 +25,12 @@ namespace FootballAccountant.Services
             var charges = ChargeHelper.MapToCharges(data);
             return charges;
         }
+
+        public IList<Payment> GetPayments()
+        {
+            var data = _googleDataService.GetSpreadsheetData();
+            var payments = PaymentHelper.MapToPayments(data);
+            return payments;
+        }
     }
 }

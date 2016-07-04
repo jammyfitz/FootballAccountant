@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FootballAccountant;
 using FootballAccountant.Controllers;
 
 namespace FootballAccountant.Tests.Controllers
@@ -26,16 +21,16 @@ namespace FootballAccountant.Tests.Controllers
         }
 
         [TestMethod]
-        public void Move()
+        public void Payments()
         {
             // Arrange
             HomeController controller = new HomeController();
 
             // Act
-            ViewResult result = controller.Move() as ViewResult;
+            ViewResult result = controller.Payments() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Move MP3s.", result.ViewBag.Message);
+            Assert.IsNotNull(result);
         }
 
         [TestMethod]

@@ -1,7 +1,6 @@
 ﻿using FootballAccountant.Models;
 using System.Collections.Generic;
 using System;
-using System.Linq;
 using System.Globalization;
 
 namespace FootballAccountant.Helpers
@@ -12,21 +11,13 @@ namespace FootballAccountant.Helpers
         {
             var charges = new List<Charge>();
 
-            //data.Where(x => x.Select(y => y))
-            //data.RemoveRange(index, list.Count - index);
-
             foreach (var row in data)
             {
-                if (IsNotDate(row[0].ToString()))
+                if (IsChargeRecord(row))
                 {
-                    continue;
+                    var charge = CreateCharge(row);
+                    charges.Add(charge);
                 }
-
-                var charge = CreateCharge(row);
-                    
-                 
-
-                charges.Add(charge);
             }
 
             return charges;
@@ -36,28 +27,15 @@ namespace FootballAccountant.Helpers
         {
             return new Charge()
             {
-                Date = ConvertDate(row[0].ToString()),
-                Cost = ConvertDecimal(row[1].ToString()),
+                Date = UtilityHelper.ConvertDate(row[0].ToString()),
+                Cost = UtilityHelper.ConvertDecimal(row[1].ToString()),
                 Notes = row.Count > 2 ? row[2].ToString() : string.Empty
             };
         }
 
-        private static decimal ConvertDecimal(string input)
+        private static bool IsChargeRecord(IList<object> record)
         {
-            return decimal.Parse(input.Substring(1, input.Length - 1));
-        }
-
-        private static DateTime ConvertDate(string input)
-        {
-            return DateTime.ParseExact(input, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-        }
-
-        private static bool IsNotDate(string value)
-        {
-            DateTime result = DateTime.MinValue;
-            DateTime.TryParse(value, out result);
-
-            return (result == DateTime.MinValue);
+            return RecordHelper.IsChargeRecord(record[0].ToString());
         }
     }
 }

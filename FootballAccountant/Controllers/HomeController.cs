@@ -1,14 +1,5 @@
-﻿using Google.Apis.Auth.OAuth2;
-using Google.Apis.Sheets.v4;
-using Google.Apis.Sheets.v4.Data;
-using Google.Apis.Services;
-using Google.Apis.Util.Store;
-
-using System.Web.Mvc;
-using System.IO;
-using System.Threading;
+﻿using System.Web.Mvc;
 using System.Collections.Generic;
-using System;
 using FootballAccountant.Models;
 using FootballAccountant.Services;
 
@@ -21,26 +12,32 @@ namespace FootballAccountant.Controllers
             return View();
         }
 
-        public ActionResult Move()
+        public ActionResult Payments()
         {
-            ViewBag.Message = "Move MP3s";
+            ViewBag.Payments = GetPayments();
 
             return View();
         }
 
         public ActionResult Charges()
         {
-            ViewBag.FootballData = GetFootballData();
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Charges = GetCharges();
 
             return View();
         }
 
-        private IList<Charge> GetFootballData()
+        private IList<Charge> GetCharges()
         {
             var service = new FootballDataService();
 
             return service.GetCharges();
+        }
+
+        private IList<Payment> GetPayments()
+        {
+            var service = new FootballDataService();
+
+            return service.GetPayments();
         }
     }
 }

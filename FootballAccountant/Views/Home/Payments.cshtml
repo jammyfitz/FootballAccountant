@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Payments";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+
+<table id="tblPayments">
+    <col width="80">
+    <col width="80">
+    <col width="80">
+    <col width="80">
+    <col width="80">
+    <thead>
+        <th>Date Paid</th>
+        <th>Total</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Paid</th>
+    </thead>
+    @foreach (var row in ViewBag.Payments)
+    {
+        <tr>
+            <td>
+                @row.DatePaid.ToString("dd/MM/yy")
+            </td>
+            <td>
+                £@row.Total
+            </td>
+            <td>
+                @row.From.ToString("dd/MM/yy")
+            </td>
+            <td>
+                @row.To.ToString("dd/MM/yy")
+            </td>
+            <td>
+                @{ var paid = string.Empty;
+                    if (row.IsPaid)
+                    { paid = "YES"; }
+                    else
+                    { paid = "NO"; }
+                }
+
+                @paid
+            </td>
+        </tr>
+    }
+
+</table>   
