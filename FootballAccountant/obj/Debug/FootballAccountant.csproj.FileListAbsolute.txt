@@ -93,3 +93,4 @@ C:\sandbox\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.Pr
 C:\sandbox\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.csproj.GenerateResource.Cache
 C:\sandbox\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.dll
 C:\sandbox\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.pdb
+C:\sandbox\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.csprojResolveAssemblyReference.cache
