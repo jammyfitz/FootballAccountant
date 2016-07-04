@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Move MP3s";
+}
+<h2>@ViewBag.Title</h2>
+
+<p>From: @Html.TextBox("MoveFrom", null, new { @class = "form-control" })</p>
+<p>To: @Html.TextBox("MoveTo", null, new { @class = "form-control" })</p>
+
+@using (Html.BeginForm("Upload", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="FileUpload" />
+    <input type="file" name="Submit2" id="Submit2" webkitdirectory directory multiple />
+    <input type="submit" name="Submit" id="Submit" value="Upload" />
+}
+
+<h3>@ViewBag.Message</h3>
