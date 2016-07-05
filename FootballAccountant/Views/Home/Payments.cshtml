@@ -22,16 +22,37 @@
     {
         <tr>
             <td>
-                @row.DatePaid.ToString("dd/MM/yy")
+                @{ var datePaid = string.Empty;
+                    if (row.DatePaid != DateTime.MinValue)
+                    { datePaid = row.DatePaid.ToString("dd/MM/yy"); }
+                    else
+                    { datePaid = "N/A"; }
+                }
+
+                @datePaid
             </td>
             <td>
-                £@row.Total
+                £@String.Format("{0:n0}", row.Total)
             </td>
             <td>
-                @row.From.ToString("dd/MM/yy")
+                @{ var from = string.Empty;
+                    if (row.From != DateTime.MinValue)
+                    { from = row.From.ToString("dd/MM/yy"); }
+                    else
+                    { from = "N/A"; }
+                }
+
+                @from
             </td>
             <td>
-                @row.To.ToString("dd/MM/yy")
+                @{ var to = string.Empty;
+                    if (row.To != DateTime.MinValue)
+                    { to = row.To.ToString("dd/MM/yy"); }
+                    else
+                    { from = "N/A"; }
+                }
+
+                @to
             </td>
             <td>
                 @{ var paid = string.Empty;
