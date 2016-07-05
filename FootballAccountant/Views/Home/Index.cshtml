@@ -8,3 +8,12 @@
 <div style="text-align: center">
     <img class="centerImage" src="~/Resources/accountantmole.jpg" />
 </div>
+<br />
+<div>
+    @{  var duePaymentTotal = @String.Format("{0:n0}", ViewBag.DuePayment.Total);
+        var fromDate = ViewBag.DuePayment.From.ToString("dd/MM/yy");
+        var toDate = ViewBag.DuePayment.To.ToString("dd/MM/yy");
+    }
+
+    <p>You currently owe £@duePaymentTotal to cover between @fromDate and @toDate inclusively.</p>
+</div>

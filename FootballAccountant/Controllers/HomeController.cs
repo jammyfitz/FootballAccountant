@@ -9,6 +9,8 @@ namespace FootballAccountant.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.DuePayment = GetDuePayment();
+
             return View();
         }
 
@@ -38,6 +40,13 @@ namespace FootballAccountant.Controllers
             var service = new FootballDataService();
 
             return service.GetPayments();
+        }
+
+        private Payment GetDuePayment()
+        {
+            var service = new FootballDataService();
+
+            return service.GetDuePayment();
         }
     }
 }

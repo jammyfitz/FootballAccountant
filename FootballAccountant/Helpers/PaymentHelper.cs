@@ -1,6 +1,7 @@
 ﻿using FootballAccountant.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FootballAccountant.Helpers
 {
@@ -22,6 +23,15 @@ namespace FootballAccountant.Helpers
             }
 
             return payments;
+        }
+
+        public static Payment GetDuePayment(IList<IList<object>> data)
+        {
+            var payments = MapToPayments(data);
+            var duePayment = payments.First(x => x.IsPaid == false);
+            var latestPayment = payments.Last(x => x.IsPaid);
+            duePayment.From = latestPayment.To.AddDays(7);
+            return duePayment;
         }
 
         private static bool IsPaymentRecord(IList<object> record)

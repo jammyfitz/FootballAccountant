@@ -32,5 +32,12 @@ namespace FootballAccountant.Services
             var payments = PaymentHelper.MapToPayments(data);
             return payments;
         }
+
+        public Payment GetDuePayment()
+        {
+            var data = _googleDataService.GetSpreadsheetData();
+            var duePayment = PaymentHelper.GetDuePayment(data);
+            return duePayment;
+        }
     }
 }
