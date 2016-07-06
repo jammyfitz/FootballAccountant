@@ -204,6 +204,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes\Mailer.cs" />
+    <Compile Include="Classes\SmtpData.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -211,11 +213,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ChargeHelper.cs" />
+    <Compile Include="Helpers\MailHelper.cs" />
     <Compile Include="Helpers\PaymentHelper.cs" />
     <Compile Include="Helpers\RecordHelper.cs" />
     <Compile Include="Helpers\UtilityHelper.cs" />
     <Compile Include="Interfaces\IFootballDataService.cs" />
+    <Compile Include="Interfaces\IFootballEmailService.cs" />
     <Compile Include="Interfaces\IGoogleDataService.cs" />
+    <Compile Include="Interfaces\IMailer.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Charge.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -228,7 +233,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\FootballDataService.cs" />
+    <Compile Include="Services\FootballEmailService.cs" />
     <Compile Include="Services\GoogleDataService.cs" />
+    <Compile Include="Services\StringCipherService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +298,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Payments.cshtml" />
+    <Content Include="Views\Home\EmailConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,7 +313,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

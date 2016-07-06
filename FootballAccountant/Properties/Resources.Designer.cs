@@ -22,7 +22,7 @@ namespace FootballAccountant.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace FootballAccountant.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FootballAccountant.Properties.Resources", typeof(Resources).Assembly);
@@ -51,12 +51,75 @@ namespace FootballAccountant.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You currently owe £{0:n0} to cover between {1:dd/MM/yy} and {2:dd/MM/yy} inclusively..
+        /// </summary>
+        public static string DuePaymentText {
+            get {
+                return ResourceManager.GetString("DuePaymentText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to jammyfitz@hotmail.com.
+        /// </summary>
+        public static string MasterEmailAddress {
+            get {
+                return ResourceManager.GetString("MasterEmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to something.
+        /// </summary>
+        public static string PassPhrase {
+            get {
+                return ResourceManager.GetString("PassPhrase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pzJNs/yMKt5GKSEzXl0g5Q==.
+        /// </summary>
+        public static string SmtpAgentDutyCode {
+            get {
+                return ResourceManager.GetString("SmtpAgentDutyCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to jammyfitz@hotmail.com.
+        /// </summary>
+        public static string SmtpAgentSine {
+            get {
+                return ResourceManager.GetString("SmtpAgentSine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 587.
+        /// </summary>
+        public static string SmtpPort {
+            get {
+                return ResourceManager.GetString("SmtpPort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to smtp.live.com.
+        /// </summary>
+        public static string SmtpServer {
+            get {
+                return ResourceManager.GetString("SmtpServer", resourceCulture);
             }
         }
     }

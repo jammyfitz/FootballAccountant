@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using FootballAccountant.Models;
 using FootballAccountant.Services;
+using System.Resources;
+using FootballAccountant.Properties;
 
 namespace FootballAccountant.Controllers
 {
@@ -28,6 +30,18 @@ namespace FootballAccountant.Controllers
             return View();
         }
 
+        public ActionResult Email()
+        {
+            SendEmail();
+
+            return RedirectToAction("EmailConfirmation");
+        }
+
+        public ActionResult EmailConfirmation()
+        {
+            return View();
+        }
+
         private IList<Charge> GetCharges()
         {
             var service = new FootballDataService();
@@ -46,7 +60,18 @@ namespace FootballAccountant.Controllers
         {
             var service = new FootballDataService();
 
+            ViewBag.DuePaymentText = Resources.DuePaymentText;
+
             return service.GetDuePayment();
+        }
+
+        private void SendEmail()
+        {
+            var duePayment = GetDuePayment();
+
+            var service = new FootballEmailService();
+
+            service.SendEmail(duePayment);
         }
     }
 }

@@ -13,7 +13,14 @@
     @{  var duePaymentTotal = @String.Format("{0:n0}", ViewBag.DuePayment.Total);
         var fromDate = ViewBag.DuePayment.From.ToString("dd/MM/yy");
         var toDate = ViewBag.DuePayment.To.ToString("dd/MM/yy");
+        var duePaymentText = ViewBag.DuePaymentText;
+        duePaymentText = string.Format(duePaymentText, duePaymentTotal, fromDate, toDate);
     }
 
-    <p>You currently owe £@duePaymentTotal to cover between @fromDate and @toDate inclusively.</p>
+    <p>@duePaymentText</p>
+
+    @using (Html.BeginForm("Email", "Home"))
+    {
+        <input type="submit" value="E-mail me this!" />
+    }  
 </div>
