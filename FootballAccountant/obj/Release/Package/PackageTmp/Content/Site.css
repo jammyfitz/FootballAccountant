@@ -17,6 +17,19 @@
     white-space: normal;
 }
 
+.nav,
+.navbar-nav,
+.navbar-nav,
+.navbar,
+.navbar-inverse,
+.navbar-fixed-top,
+.navbar-nav > li > a {
+  background-color: deepskyblue;
+  border-color: #080808;
+  color: yellow;
+  font-size: large;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
