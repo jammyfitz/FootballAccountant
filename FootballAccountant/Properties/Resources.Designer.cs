@@ -97,6 +97,15 @@ namespace FootballAccountant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to jammyfitz.
+        /// </summary>
+        public static string GoogleUser {
+            get {
+                return ResourceManager.GetString("GoogleUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to jammyfitz@hotmail.com.
         /// </summary>
         public static string MasterEmailAddress {
@@ -165,6 +174,15 @@ namespace FootballAccountant.Properties {
         public static string SpreadsheetRange {
             get {
                 return ResourceManager.GetString("SpreadsheetRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://docs.google.com/spreadsheets/d/1Y1QyPzAo58oKZKQrp0LXY2nAknxWeLXmaOE9tYoGsh4/pubhtml.
+        /// </summary>
+        public static string SpreadsheetUrl {
+            get {
+                return ResourceManager.GetString("SpreadsheetUrl", resourceCulture);
             }
         }
         

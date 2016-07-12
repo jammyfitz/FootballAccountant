@@ -129,6 +129,9 @@
   <data name="GoogleSecretPath" xml:space="preserve">
     <value>Resources\client_secret.json</value>
   </data>
+  <data name="GoogleUser" xml:space="preserve">
+    <value>jammyfitz</value>
+  </data>
   <data name="MasterEmailAddress" xml:space="preserve">
     <value>jammyfitz@hotmail.com</value>
   </data>
@@ -152,6 +155,9 @@
   </data>
   <data name="SpreadsheetRange" xml:space="preserve">
     <value>Current</value>
+  </data>
+  <data name="SpreadsheetUrl" xml:space="preserve">
+    <value>https://docs.google.com/spreadsheets/d/1Y1QyPzAo58oKZKQrp0LXY2nAknxWeLXmaOE9tYoGsh4/pubhtml</value>
   </data>
   <data name="WorkingDir" xml:space="preserve">
     <value>C:\sandbox\FootballAccountant\FootballAccountant\</value>
