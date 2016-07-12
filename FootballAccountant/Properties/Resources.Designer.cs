@@ -61,11 +61,38 @@ namespace FootballAccountant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FootballAccountant.
+        /// </summary>
+        public static string ApplicationName {
+            get {
+                return ResourceManager.GetString("ApplicationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You currently owe £{0:n0} to cover between {1:dd/MM/yy} and {2:dd/MM/yy} inclusively..
         /// </summary>
         public static string DuePaymentText {
             get {
                 return ResourceManager.GetString("DuePaymentText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resources\footballaccountant.json.
+        /// </summary>
+        public static string GoogleCredPath {
+            get {
+                return ResourceManager.GetString("GoogleCredPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resources\client_secret.json.
+        /// </summary>
+        public static string GoogleSecretPath {
+            get {
+                return ResourceManager.GetString("GoogleSecretPath", resourceCulture);
             }
         }
         
@@ -120,6 +147,33 @@ namespace FootballAccountant.Properties {
         public static string SmtpServer {
             get {
                 return ResourceManager.GetString("SmtpServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1Y1QyPzAo58oKZKQrp0LXY2nAknxWeLXmaOE9tYoGsh4.
+        /// </summary>
+        public static string SpreadsheetId {
+            get {
+                return ResourceManager.GetString("SpreadsheetId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current.
+        /// </summary>
+        public static string SpreadsheetRange {
+            get {
+                return ResourceManager.GetString("SpreadsheetRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C:\sandbox\FootballAccountant\FootballAccountant\.
+        /// </summary>
+        public static string WorkingDir {
+            get {
+                return ResourceManager.GetString("WorkingDir", resourceCulture);
             }
         }
     }

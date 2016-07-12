@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Charges";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+
+<table id="tblCharges">
+    <col width="130">
+    <col width="80">
+    <col width="500">
+    <thead>
+        <th>Date</th>
+        <th>Cost</th>
+        <th>Notes</th>
+    </thead>
+    @foreach (var row in ViewBag.Charges)
+    {
+        <tr>
+            <td>
+                @row.Date.ToString("dd/MM/yy")
+            </td>
+            <td>
+                £@row.Cost
+            </td>
+            <td>
+                @row.Notes
+            </td>
+        </tr>
+    }
+
+</table>   

@@ -39,7 +39,6 @@ C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\EntityFramework
 C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\Google.Apis.PlatformServices.dll
 C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\Google.Apis.Auth.PlatformServices.dll
 C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\Google.Apis.Core.dll
-C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\Zlib.Portable.dll
 C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\log4net.dll
 C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\BouncyCastle.Crypto.dll
@@ -71,7 +70,6 @@ C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\Google.Apis.Aut
 C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\Google.Apis.Auth.PlatformServices.xml
 C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\Google.Apis.Core.pdb
 C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\Google.Apis.Core.xml
-C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\Zlib.Portable.xml
 C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\log4net.xml
 C:\sandbox\FootballAccountant\FootballAccountant.Tests\bin\Debug\BouncyCastle.Crypto.pdb

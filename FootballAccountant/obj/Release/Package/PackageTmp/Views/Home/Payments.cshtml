@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Payments";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+
+<table id="tblPayments">
+    <col width="80">
+    <col width="80">
+    <col width="80">
+    <col width="80">
+    <col width="80">
+    <thead>
+        <th>Date Paid</th>
+        <th>Total</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Paid</th>
+    </thead>
+    @foreach (var row in ViewBag.Payments)
+    {
+        <tr>
+            <td>
+                @{ var datePaid = string.Empty;
+                    if (row.DatePaid != DateTime.MinValue)
+                    { datePaid = row.DatePaid.ToString("dd/MM/yy"); }
+                    else
+                    { datePaid = "N/A"; }
+                }
+
+                @datePaid
+            </td>
+            <td>
+                £@String.Format("{0:n0}", row.Total)
+            </td>
+            <td>
+                @{ var from = string.Empty;
+                    if (row.From != DateTime.MinValue)
+                    { from = row.From.ToString("dd/MM/yy"); }
+                    else
+                    { from = "N/A"; }
+                }
+
+                @from
+            </td>
+            <td>
+                @{ var to = string.Empty;
+                    if (row.To != DateTime.MinValue)
+                    { to = row.To.ToString("dd/MM/yy"); }
+                    else
+                    { from = "N/A"; }
+                }
+
+                @to
+            </td>
+            <td>
+                @{ var paid = string.Empty;
+                    if (row.IsPaid)
+                    { paid = "YES"; }
+                    else
+                    { paid = "NO"; }
+                }
+
+                @paid
+            </td>
+        </tr>
+    }
+
+</table>   

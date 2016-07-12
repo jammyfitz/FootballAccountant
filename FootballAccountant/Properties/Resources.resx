@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>FootballAccountant</value>
+  </data>
   <data name="DuePaymentText" xml:space="preserve">
     <value>You currently owe £{0:n0} to cover between {1:dd/MM/yy} and {2:dd/MM/yy} inclusively.</value>
+  </data>
+  <data name="GoogleCredPath" xml:space="preserve">
+    <value>Resources\footballaccountant.json</value>
+  </data>
+  <data name="GoogleSecretPath" xml:space="preserve">
+    <value>Resources\client_secret.json</value>
   </data>
   <data name="MasterEmailAddress" xml:space="preserve">
     <value>jammyfitz@hotmail.com</value>
@@ -137,5 +146,14 @@
   </data>
   <data name="SmtpServer" xml:space="preserve">
     <value>smtp.live.com</value>
+  </data>
+  <data name="SpreadsheetId" xml:space="preserve">
+    <value>1Y1QyPzAo58oKZKQrp0LXY2nAknxWeLXmaOE9tYoGsh4</value>
+  </data>
+  <data name="SpreadsheetRange" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="WorkingDir" xml:space="preserve">
+    <value>C:\sandbox\FootballAccountant\FootballAccountant\</value>
   </data>
 </root>
