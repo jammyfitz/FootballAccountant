@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Accountant</title>
+    <link rel="shortcut icon" href="~/Resources/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/Resources/favicon.ico" type="image/x-icon">
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -21,8 +23,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="yellow">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li class="yellow">@Html.ActionLink("Payments", "Payments", "Home")</liclass="yellow">
-                    <li class="yellow">@Html.ActionLink("Charges", "Charges", "Home")</liclass="yellow">
+                    <li class="yellow">@Html.ActionLink("Payments", "Payments", "Home")</li>
+                    <li class="yellow">@Html.ActionLink("Charges", "Charges", "Home")</li>
                 </ul>
             </div>
         </div>

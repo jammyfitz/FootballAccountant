@@ -17,6 +17,13 @@
     white-space: normal;
 }
 
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+#page-proxy-favicon:not(src), .tab-icon-image:not(src) {
+list-style-image: url("chrome://global/skin/icons/folder-item.png")!important;
+-moz-image-region: rect(0px, 16px, 16px, 0px)!important;
+}
+
 .nav,
 .navbar-nav,
 .navbar-nav,
