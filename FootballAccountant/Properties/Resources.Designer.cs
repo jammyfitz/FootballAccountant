@@ -115,6 +115,15 @@ namespace FootballAccountant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have no outstanding payments!.
+        /// </summary>
+        public static string NoDuePayment {
+            get {
+                return ResourceManager.GetString("NoDuePayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to something.
         /// </summary>
         public static string PassPhrase {

@@ -59,10 +59,18 @@ namespace FootballAccountant.Controllers
         private Payment GetDuePayment()
         {
             var service = new FootballDataService();
+            var duePayment = service.GetDuePayment();
 
             ViewBag.DuePaymentText = Resources.DuePaymentText;
 
-            return service.GetDuePayment();
+            if (duePayment == null)
+            {
+                ViewBag.DuePaymentText = Resources.NoDuePayment;
+            }
+
+            
+
+            return duePayment;
         }
 
         private void SendEmail()

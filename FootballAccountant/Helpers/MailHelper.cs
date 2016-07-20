@@ -26,7 +26,12 @@ namespace FootballAccountant.Helpers
         {
             StringBuilder body = new StringBuilder("***Football Accountant v1.0***\n\n");
 
-            body.AppendFormat(Resources.DuePaymentText, duePayment.Total, duePayment.From, duePayment.To);
+            if(duePayment != null)
+            {
+                body.AppendFormat(Resources.DuePaymentText, duePayment.Total, duePayment.From, duePayment.To);
+            }
+
+            body.AppendLine(Resources.NoDuePayment);
 
             return body.ToString();
         }

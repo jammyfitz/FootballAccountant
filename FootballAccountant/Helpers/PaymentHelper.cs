@@ -28,10 +28,21 @@ namespace FootballAccountant.Helpers
         public static Payment GetDuePayment(IList<IList<object>> data)
         {
             var payments = MapToPayments(data);
-            var duePayment = payments.First(x => x.IsPaid == false);
-            var latestPayment = payments.Last(x => x.IsPaid);
-            duePayment.From = latestPayment.To.AddDays(7);
-            return duePayment;
+
+            if(PaymentDue(payments))
+            {
+                var duePayment = payments.First(x => x.IsPaid == false);
+                var latestPayment = payments.Last(x => x.IsPaid);
+                duePayment.From = latestPayment.To.AddDays(7);
+                return duePayment;
+            }
+
+            return null;
+        }
+
+        private static bool PaymentDue(IList<Payment> payments)
+        {
+            return payments.Any(x => x.IsPaid == false);
         }
 
         private static bool IsPaymentRecord(IList<object> record)

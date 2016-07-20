@@ -135,6 +135,9 @@
   <data name="MasterEmailAddress" xml:space="preserve">
     <value>jammyfitz@hotmail.com</value>
   </data>
+  <data name="NoDuePayment" xml:space="preserve">
+    <value>You have no outstanding payments!</value>
+  </data>
   <data name="PassPhrase" xml:space="preserve">
     <value>something</value>
   </data>
