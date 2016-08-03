@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Unclaimed Cancellations";
+}
+
+<h2>@ViewBag.Title</h2>
+<br />
+
+<table id="tblCancellations">
+    <col width="130">
+    <col width="80">
+    <col width="500">
+    <thead>
+    <th>Date</th>
+    <th>Cost</th>
+    <th>Unclaimed</th>
+    </thead>
+    @foreach (var row in ViewBag.DueCancellations)
+    {
+        <tr>
+            <td>
+                @row.Date.ToString("dd/MM/yy")
+            </td>
+            <td>
+                £@row.Cost
+            </td>
+            <td>
+                @row.Unclaimed
+            </td>
+        </tr>
+    }
+
+</table>   
