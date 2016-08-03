@@ -33,6 +33,13 @@ namespace FootballAccountant.Services
             return payments;
         }
 
+        public IList<Cancellation> GetUnclaimedCancellations()
+        {
+            var data = _googleDataService.GetSpreadsheetData();
+            var cancellations = CancellationHelper.MapToCancellations(data);
+            return cancellations;
+        }
+
         public Payment GetDuePayment()
         {
             var data = _googleDataService.GetSpreadsheetData();

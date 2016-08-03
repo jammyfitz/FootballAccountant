@@ -212,6 +212,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CancellationHelper.cs" />
     <Compile Include="Helpers\ChargeHelper.cs" />
     <Compile Include="Helpers\MailHelper.cs" />
     <Compile Include="Helpers\PaymentHelper.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Interfaces\IFootballEmailService.cs" />
     <Compile Include="Interfaces\IGoogleDataService.cs" />
     <Compile Include="Interfaces\IMailer.cs" />
+    <Compile Include="Models\Cancellation.cs" />
     <Compile Include="Models\Charge.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Payment.cs" />
@@ -293,6 +295,7 @@
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Home\Payments.cshtml" />
     <Content Include="Views\Home\EmailConfirmation.cshtml" />
+    <Content Include="Views\Home\Cancellations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -70,6 +70,15 @@ namespace FootballAccountant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You are currently owed £{0:n0} to cover the cancellation made for {1:dd/MM/yy}..
+        /// </summary>
+        public static string DueCancellationText {
+            get {
+                return ResourceManager.GetString("DueCancellationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You currently owe £{0:n0} to cover between {1:dd/MM/yy} and {2:dd/MM/yy} inclusively..
         /// </summary>
         public static string DuePaymentText {
@@ -111,6 +120,15 @@ namespace FootballAccountant.Properties {
         public static string MasterEmailAddress {
             get {
                 return ResourceManager.GetString("MasterEmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have no unclaimed cancellations!.
+        /// </summary>
+        public static string NoDueCancellation {
+            get {
+                return ResourceManager.GetString("NoDueCancellation", resourceCulture);
             }
         }
         

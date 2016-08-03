@@ -120,6 +120,9 @@
   <data name="ApplicationName" xml:space="preserve">
     <value>FootballAccountant</value>
   </data>
+  <data name="DueCancellationText" xml:space="preserve">
+    <value>You are currently owed £{0:n0} to cover the cancellation made for {1:dd/MM/yy}.</value>
+  </data>
   <data name="DuePaymentText" xml:space="preserve">
     <value>You currently owe £{0:n0} to cover between {1:dd/MM/yy} and {2:dd/MM/yy} inclusively.</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="MasterEmailAddress" xml:space="preserve">
     <value>jammyfitz@hotmail.com</value>
+  </data>
+  <data name="NoDueCancellation" xml:space="preserve">
+    <value>You have no unclaimed cancellations!</value>
   </data>
   <data name="NoDuePayment" xml:space="preserve">
     <value>You have no outstanding payments!</value>

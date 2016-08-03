@@ -2,6 +2,7 @@
 using FootballAccountant.Models;
 using FootballAccountant.Classes;
 using FootballAccountant.Properties;
+using System.Collections.Generic;
 
 namespace FootballAccountant.Services
 {
@@ -21,9 +22,9 @@ namespace FootballAccountant.Services
             _mailer = mailer;
         }
 
-        public void SendEmail(Payment paymentRecord)
+        public void SendEmail(Payment paymentRecord, IList<Cancellation> cancellationRecords)
         {
-            _mailer.SendMail(paymentRecord);
+            _mailer.SendMail(paymentRecord, cancellationRecords);
         }
 
         private SmtpData InitialiseSmtpData()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace FootballAccountant.Helpers
@@ -39,6 +40,14 @@ namespace FootballAccountant.Helpers
         public static bool IsPaid(string note)
         {
             return (note.Contains("PAID TOTAL"));
+        }
+
+        public static bool IsCancellationRecord(IList<object> record)
+        {
+            if (record.Count > 3 && record[3].ToString() == "Y")
+                return true;
+
+            return false;
         }
     }
 }

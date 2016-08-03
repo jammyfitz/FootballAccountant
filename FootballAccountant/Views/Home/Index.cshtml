@@ -21,6 +21,28 @@
 
     <p>@duePaymentText</p>
 
+    @{
+        var dueCancellationText = ViewBag.DueCancellationText;
+        var dueCancellationTemplateText = ViewBag.DueCancellationText;
+
+        if (ViewBag.DueCancellations.Count > 0)
+        {
+            foreach (var row in ViewBag.DueCancellations)
+            {
+                var date = @row.Date.ToString("dd/MM/yy");
+                var cost = @String.Format("{0:n0}", @row.Cost);
+
+                dueCancellationText = string.Format(dueCancellationTemplateText, cost, date);
+
+                <p>@dueCancellationText</p>
+            }
+        }
+        else
+        {
+            <p>@dueCancellationText</p>
+        }
+    }
+
     @using (Html.BeginForm("Email", "Home"))
     {
         <input type="submit" value="E-mail me this!" />

@@ -4,6 +4,7 @@ using FootballAccountant.Models;
 using FootballAccountant.Services;
 using System.Resources;
 using FootballAccountant.Properties;
+using System.Linq;
 
 namespace FootballAccountant.Controllers
 {
@@ -12,6 +13,7 @@ namespace FootballAccountant.Controllers
         public ActionResult Index()
         {
             ViewBag.DuePayment = GetDuePayment();
+            ViewBag.DueCancellations = GetDueCancellations();
 
             return View();
         }
@@ -26,6 +28,13 @@ namespace FootballAccountant.Controllers
         public ActionResult Charges()
         {
             ViewBag.Charges = GetCharges();
+
+            return View();
+        }
+
+        public ActionResult Cancellations()
+        {
+            ViewBag.DueCancellations = GetCancellations();
 
             return View();
         }
@@ -56,6 +65,13 @@ namespace FootballAccountant.Controllers
             return service.GetPayments();
         }
 
+        private IList<Cancellation> GetCancellations()
+        {
+            var service = new FootballDataService();
+
+            return service.GetUnclaimedCancellations();
+        }
+
         private Payment GetDuePayment()
         {
             var service = new FootballDataService();
@@ -68,18 +84,32 @@ namespace FootballAccountant.Controllers
                 ViewBag.DuePaymentText = Resources.NoDuePayment;
             }
 
-            
-
             return duePayment;
+        }
+
+        private IList<Cancellation> GetDueCancellations()
+        {
+            var service = new FootballDataService();
+            var dueCancellations = service.GetUnclaimedCancellations();
+
+            ViewBag.DueCancellationText = Resources.DueCancellationText;
+
+            if (!dueCancellations.Any())
+            {
+                ViewBag.DueCancellationText = Resources.NoDueCancellation;
+            }
+
+            return dueCancellations;
         }
 
         private void SendEmail()
         {
             var duePayment = GetDuePayment();
+            var dueCancellations = GetDueCancellations();
 
             var service = new FootballEmailService();
 
-            service.SendEmail(duePayment);
+            service.SendEmail(duePayment, dueCancellations);
         }
     }
 }

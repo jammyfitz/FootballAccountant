@@ -1,6 +1,7 @@
 ﻿using FootballAccountant.Helpers;
 using FootballAccountant.Interfaces;
 using FootballAccountant.Models;
+using System.Collections.Generic;
 using System.Net.Mail;
 
 namespace FootballAccountant.Classes
@@ -14,9 +15,9 @@ namespace FootballAccountant.Classes
             _smtpData = smtpData;
         }
 
-        public bool SendMail(Payment duePayment)
+        public bool SendMail(Payment duePayment, IList<Cancellation> dueCancellations)
         {
-            var mail = CreateMail(duePayment);
+            var mail = CreateMail(duePayment, dueCancellations);
 
             SmtpClient SmtpServer = new SmtpClient(_smtpData.Host);
             SmtpServer.Port = int.Parse(_smtpData.Port);
@@ -27,13 +28,13 @@ namespace FootballAccountant.Classes
             return true;
         }
 
-        public MailMessage CreateMail(Payment duePayment)
+        public MailMessage CreateMail(Payment duePayment, IList<Cancellation> dueCancellations)
         {
             MailMessage mail = new MailMessage()
             {
                 From = new MailAddress(MailHelper.GetFromAddress()),
                 Subject = MailHelper.GetSubject(),
-                Body = MailHelper.GetBody(duePayment),
+                Body = MailHelper.GetBody(duePayment, dueCancellations),
             };
 
             mail.To.Add(MailHelper.GetToAddress());
