@@ -22,9 +22,9 @@ namespace FootballAccountant.Services
             _mailer = mailer;
         }
 
-        public void SendEmail(Payment paymentRecord, IList<Cancellation> cancellationRecords)
+        public void SendEmail(Payment paymentRecord, IList<Cancellation> unclaimedCancellationRecords, IList<Cancellation> unsettledCancellationRecords)
         {
-            _mailer.SendMail(paymentRecord, cancellationRecords);
+            _mailer.SendMail(paymentRecord, unclaimedCancellationRecords, unsettledCancellationRecords);
         }
 
         private SmtpData InitialiseSmtpData()

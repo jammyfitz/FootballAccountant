@@ -142,6 +142,15 @@ namespace FootballAccountant.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have no unsettled cancellations!.
+        /// </summary>
+        public static string NoUnsettledCancellations {
+            get {
+                return ResourceManager.GetString("NoUnsettledCancellations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to something.
         /// </summary>
         public static string PassPhrase {
@@ -210,6 +219,15 @@ namespace FootballAccountant.Properties {
         public static string SpreadsheetUrl {
             get {
                 return ResourceManager.GetString("SpreadsheetUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are currently owed an unsettled cancellation of £{0:n0} to cover the cancellation made for {1:dd/MM/yy}..
+        /// </summary>
+        public static string UnsettledCancellationText {
+            get {
+                return ResourceManager.GetString("UnsettledCancellationText", resourceCulture);
             }
         }
         

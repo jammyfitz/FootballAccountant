@@ -43,6 +43,28 @@
         }
     }
 
+    @{
+        var unsettledCancellationText = ViewBag.UnsettledCancellationText;
+        var unsettledCancellationTemplateText = ViewBag.UnsettledCancellationText;
+
+        if (ViewBag.UnsettledCancellations.Count > 0)
+        {
+            foreach (var row in ViewBag.UnsettledCancellations)
+            {
+                var date = @row.Date.ToString("dd/MM/yy");
+                var cost = @String.Format("{0:n0}", @row.Cost);
+
+                unsettledCancellationText = string.Format(unsettledCancellationTemplateText, cost, date);
+
+                <p>@unsettledCancellationText</p>
+            }
+        }
+        else
+        {
+            <p>@unsettledCancellationText</p>
+        }
+    }
+
     @using (Html.BeginForm("Email", "Home"))
     {
         <input type="submit" value="E-mail me this!" />

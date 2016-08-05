@@ -144,6 +144,9 @@
   <data name="NoDuePayment" xml:space="preserve">
     <value>You have no outstanding payments!</value>
   </data>
+  <data name="NoUnsettledCancellations" xml:space="preserve">
+    <value>You have no unsettled cancellations!</value>
+  </data>
   <data name="PassPhrase" xml:space="preserve">
     <value>something</value>
   </data>
@@ -167,6 +170,9 @@
   </data>
   <data name="SpreadsheetUrl" xml:space="preserve">
     <value>https://docs.google.com/spreadsheets/d/1Y1QyPzAo58oKZKQrp0LXY2nAknxWeLXmaOE9tYoGsh4/pubhtml</value>
+  </data>
+  <data name="UnsettledCancellationText" xml:space="preserve">
+    <value>You are currently owed an unsettled cancellation of £{0:n0} to cover the cancellation made for {1:dd/MM/yy}.</value>
   </data>
   <data name="WorkingDir" xml:space="preserve">
     <value>C:\sandbox\FootballAccountant\FootballAccountant\</value>

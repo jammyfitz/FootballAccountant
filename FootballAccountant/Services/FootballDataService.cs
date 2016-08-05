@@ -2,6 +2,7 @@
 using FootballAccountant.Models;
 using FootballAccountant.Interfaces;
 using FootballAccountant.Helpers;
+using System.Linq;
 
 namespace FootballAccountant.Services
 {
@@ -37,7 +38,14 @@ namespace FootballAccountant.Services
         {
             var data = _googleDataService.GetSpreadsheetData();
             var cancellations = CancellationHelper.MapToCancellations(data);
-            return cancellations;
+            return cancellations.Where(x => x.Unclaimed).ToList();
+        }
+
+        public IList<Cancellation> GetUnsettledCancellations()
+        {
+            var data = _googleDataService.GetSpreadsheetData();
+            var cancellations = CancellationHelper.MapToCancellations(data);
+            return cancellations.Where(x => x.Unsettled).ToList();
         }
 
         public Payment GetDuePayment()

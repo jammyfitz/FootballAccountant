@@ -5,6 +5,6 @@ namespace FootballAccountant.Interfaces
 {
     public interface IFootballEmailService
     {
-        void SendEmail(Payment paymentRecord, IList<Cancellation> cancellationRecords);
+        void SendEmail(Payment paymentRecord, IList<Cancellation> unclaimedCancellationRecords, IList<Cancellation> unsettledCancellationRecords);
     }
 }

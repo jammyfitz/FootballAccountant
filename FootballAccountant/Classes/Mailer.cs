@@ -15,9 +15,9 @@ namespace FootballAccountant.Classes
             _smtpData = smtpData;
         }
 
-        public bool SendMail(Payment duePayment, IList<Cancellation> dueCancellations)
+        public bool SendMail(Payment duePayment, IList<Cancellation> unclaimedCancellations, IList<Cancellation> unsettledCancellations)
         {
-            var mail = CreateMail(duePayment, dueCancellations);
+            var mail = CreateMail(duePayment, unclaimedCancellations, unsettledCancellations);
 
             SmtpClient SmtpServer = new SmtpClient(_smtpData.Host);
             SmtpServer.Port = int.Parse(_smtpData.Port);
@@ -28,13 +28,13 @@ namespace FootballAccountant.Classes
             return true;
         }
 
-        public MailMessage CreateMail(Payment duePayment, IList<Cancellation> dueCancellations)
+        public MailMessage CreateMail(Payment duePayment, IList<Cancellation> unclaimedCancellations, IList<Cancellation> unsettledCancellations)
         {
             MailMessage mail = new MailMessage()
             {
                 From = new MailAddress(MailHelper.GetFromAddress()),
                 Subject = MailHelper.GetSubject(),
-                Body = MailHelper.GetBody(duePayment, dueCancellations),
+                Body = MailHelper.GetBody(duePayment, unclaimedCancellations, unsettledCancellations)
             };
 
             mail.To.Add(MailHelper.GetToAddress());

@@ -7,5 +7,6 @@ namespace FootballAccountant.Models
         public DateTime Date { get; set; }
         public decimal Cost { get; set; }
         public bool Unclaimed { get; set; }
+        public bool Unsettled { get; set; }
     }
 }

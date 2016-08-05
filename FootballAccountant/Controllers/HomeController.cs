@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using FootballAccountant.Models;
 using FootballAccountant.Services;
-using System.Resources;
 using FootballAccountant.Properties;
 using System.Linq;
 
@@ -14,6 +13,7 @@ namespace FootballAccountant.Controllers
         {
             ViewBag.DuePayment = GetDuePayment();
             ViewBag.DueCancellations = GetDueCancellations();
+            ViewBag.UnsettledCancellations = GetUnsettledCancellations();
 
             return View();
         }
@@ -34,7 +34,7 @@ namespace FootballAccountant.Controllers
 
         public ActionResult Cancellations()
         {
-            ViewBag.DueCancellations = GetCancellations();
+            ViewBag.DueCancellations = GetUnclaimedCancellations();
 
             return View();
         }
@@ -65,11 +65,26 @@ namespace FootballAccountant.Controllers
             return service.GetPayments();
         }
 
-        private IList<Cancellation> GetCancellations()
+        private IList<Cancellation> GetUnclaimedCancellations()
         {
             var service = new FootballDataService();
 
             return service.GetUnclaimedCancellations();
+        }
+
+        private IList<Cancellation> GetUnsettledCancellations()
+        {
+            var service = new FootballDataService();
+            var unsettledCancellations = service.GetUnsettledCancellations();
+
+            ViewBag.UnsettledCancellationText = Resources.UnsettledCancellationText;
+
+            if(!unsettledCancellations.Any())
+            {
+                ViewBag.UnsettledCancellationText = Resources.NoUnsettledCancellations;
+            }
+
+            return unsettledCancellations;
         }
 
         private Payment GetDuePayment()
@@ -106,10 +121,11 @@ namespace FootballAccountant.Controllers
         {
             var duePayment = GetDuePayment();
             var dueCancellations = GetDueCancellations();
+            var unsettledCancellations = GetUnsettledCancellations();
 
             var service = new FootballEmailService();
 
-            service.SendEmail(duePayment, dueCancellations);
+            service.SendEmail(duePayment, dueCancellations, unsettledCancellations);
         }
     }
 }

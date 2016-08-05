@@ -30,7 +30,8 @@ namespace FootballAccountant.Helpers
             {
                 Date = UtilityHelper.ConvertDate(row[0].ToString()),
                 Cost = UtilityHelper.ConvertDecimal(row[1].ToString()),
-                Unclaimed = row[3].ToString() == "Y" ? true : false
+                Unclaimed = row[3].ToString() == "Y" ? true : false,
+                Unsettled = row[4].ToString() == "Y" ? true : false
             };
         }
 

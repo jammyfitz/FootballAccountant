@@ -24,13 +24,15 @@ namespace FootballAccountant.Helpers
             return DateTime.Now.ToString("yyyy-MM-dd") + " - Football Accountant";
         }
 
-        public static string GetBody(Payment duePayment, IList<Cancellation> dueCancellations)
+        public static string GetBody(Payment duePayment, IList<Cancellation> unclaimedCancellations, IList<Cancellation> unsettledCancellations)
         {
             StringBuilder body = new StringBuilder("***Football Accountant v1.0***\n\n");
 
             BuildPaymentText(duePayment, body);
 
-            BuildCancellationText(dueCancellations, body);
+            BuildUnclaimedCancellationText(unclaimedCancellations, body);
+
+            BuildUnsettledCancellationText(unsettledCancellations, body);
 
             return body.ToString();
         }
@@ -45,17 +47,31 @@ namespace FootballAccountant.Helpers
             body.AppendLine(Resources.NoDuePayment);
         }
 
-        private static void BuildCancellationText(IList<Cancellation> dueCancellations, StringBuilder body)
+        private static void BuildUnclaimedCancellationText(IList<Cancellation> unclaimedCancellations, StringBuilder body)
         {
-            if(!dueCancellations.Any())
+            if(!unclaimedCancellations.Any())
             {
                 body.AppendLine(Resources.NoDueCancellation);
                 return;
             }
 
-            foreach(var cancellation in dueCancellations)
+            foreach(var cancellation in unclaimedCancellations)
             {
                 body.AppendFormat(Resources.DueCancellationText, cancellation.Cost, cancellation.Date);
+            }
+        }
+
+        private static void BuildUnsettledCancellationText(IList<Cancellation> unsettledCancellations, StringBuilder body)
+        {
+            if (!unsettledCancellations.Any())
+            {
+                body.AppendLine(Resources.NoUnsettledCancellations);
+                return;
+            }
+
+            foreach (var cancellation in unsettledCancellations)
+            {
+                body.AppendFormat(Resources.UnsettledCancellationText, cancellation.Cost, cancellation.Date);
             }
         }
     }

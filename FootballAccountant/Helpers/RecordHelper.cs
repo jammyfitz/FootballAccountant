@@ -44,7 +44,23 @@ namespace FootballAccountant.Helpers
 
         public static bool IsCancellationRecord(IList<object> record)
         {
-            if (record.Count > 3 && record[3].ToString() == "Y")
+            if (record.Count > 3 && record[2].ToString().Contains("Cancelled"))
+                return true;
+
+            return false;
+        }
+
+        public static bool IsUnclaimedCancellationRecord(IList<object> record)
+        {
+            if (IsCancellationRecord(record) && record[3].ToString() == "Y")
+                return true;
+
+            return false;
+        }
+
+        public static bool IsUnsettledCancellationRecord(IList<object> record)
+        {
+            if (IsCancellationRecord(record) && record[3].ToString() == "Y")
                 return true;
 
             return false;
