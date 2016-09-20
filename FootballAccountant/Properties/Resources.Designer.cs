@@ -232,7 +232,7 @@ namespace FootballAccountant.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to C:\sandbox\FootballAccountant\FootballAccountant\.
+        ///   Looks up a localized string similar to C:\repos\FootballAccountant\FootballAccountant\.
         /// </summary>
         public static string WorkingDir {
             get {

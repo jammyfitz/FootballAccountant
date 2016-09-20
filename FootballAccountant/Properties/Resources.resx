@@ -175,6 +175,6 @@
     <value>You are currently owed an unsettled cancellation of £{0:n0} to cover the cancellation made for {1:dd/MM/yy}.</value>
   </data>
   <data name="WorkingDir" xml:space="preserve">
-    <value>C:\sandbox\FootballAccountant\FootballAccountant\</value>
+    <value>C:\repos\FootballAccountant\FootballAccountant\</value>
   </data>
 </root>
