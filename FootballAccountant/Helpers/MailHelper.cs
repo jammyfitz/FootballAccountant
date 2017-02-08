@@ -42,9 +42,14 @@ namespace FootballAccountant.Helpers
             if (duePayment != null)
             {
                 body.AppendFormat(Resources.DuePaymentText, duePayment.Total, duePayment.From, duePayment.To);
+
+            }
+            else
+            {
+                body.AppendLine(Resources.NoDuePayment);
             }
 
-            body.AppendLine(Resources.NoDuePayment);
+            body.AppendLine();
         }
 
         private static void BuildUnclaimedCancellationText(IList<Cancellation> unclaimedCancellations, StringBuilder body)

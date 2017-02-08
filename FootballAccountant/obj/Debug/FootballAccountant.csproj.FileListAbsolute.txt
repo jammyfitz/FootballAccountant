@@ -184,8 +184,8 @@ C:\repos\FootballAccountant\FootballAccountant\bin\Microsoft.Owin.Security.OAuth
 C:\repos\FootballAccountant\FootballAccountant\bin\Microsoft.Owin.Security.Google.xml
 C:\repos\FootballAccountant\FootballAccountant\bin\Microsoft.Owin.Security.Twitter.xml
 C:\repos\FootballAccountant\FootballAccountant\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\repos\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.csprojResolveAssemblyReference.cache
 C:\repos\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.Properties.Resources.resources
 C:\repos\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.csproj.GenerateResource.Cache
 C:\repos\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.dll
 C:\repos\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.pdb
+C:\repos\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.csprojResolveAssemblyReference.cache
