@@ -188,4 +188,3 @@ C:\repos\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.Prop
 C:\repos\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.csproj.GenerateResource.Cache
 C:\repos\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.dll
 C:\repos\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.pdb
-C:\repos\FootballAccountant\FootballAccountant\obj\Debug\FootballAccountant.csprojResolveAssemblyReference.cache

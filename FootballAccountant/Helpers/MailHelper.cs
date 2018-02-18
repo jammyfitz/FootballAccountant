@@ -41,7 +41,7 @@ namespace FootballAccountant.Helpers
         {
             if (duePayment != null)
             {
-                body.AppendFormat(Resources.DuePaymentText, duePayment.Total, duePayment.From, duePayment.To);
+                body.AppendFormat(Resources.DuePaymentText, duePayment.Total, duePayment.From, duePayment.To).Append("\n");
 
             }
             else
@@ -62,8 +62,10 @@ namespace FootballAccountant.Helpers
 
             foreach(var cancellation in unclaimedCancellations)
             {
-                body.AppendFormat(Resources.DueCancellationText, cancellation.Cost, cancellation.Date);
+                body.AppendFormat(Resources.DueCancellationText, cancellation.Cost, cancellation.Date).Append("\n");
             }
+
+            body.AppendLine();
         }
 
         private static void BuildUnsettledCancellationText(IList<Cancellation> unsettledCancellations, StringBuilder body)
@@ -76,8 +78,10 @@ namespace FootballAccountant.Helpers
 
             foreach (var cancellation in unsettledCancellations)
             {
-                body.AppendFormat(Resources.UnsettledCancellationText, cancellation.Cost, cancellation.Date);
+                body.AppendFormat(Resources.UnsettledCancellationText, cancellation.Cost, cancellation.Date).Append("\n");
             }
+
+            body.AppendLine();
         }
     }
 }
